@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clear Float</title>
+    <link rel="stylesheet" href="base.css">
+    <style>
+    #content1, #content2{width:1000px;margin:auto;border:thin solid silver;}
+    #content1:after{content:'.';display:block;height:0;overflow:hidden;visibility:hidden;clear:both;}
+    .f-fl, .f-fr{width:100px;height:100px;background-color:#eee;}
+    #content2{margin-top:10px;overflow:hidden;}
+    </style>
+</head>
+<body>
+    <div id="content1">
+        <div class="f-fl"></div>
+        <div class="f-fr"></div>
+        <p>use :after</p>
+    </div>
+    <div id="content2">
+        <div class="f-fl"></div>
+        <div class="f-fr"></div>
+        <p>use block formatting context</p>
+    </div>
+</body>
+</html>

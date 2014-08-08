@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Block Formatting Context</title>
+    <link rel="stylesheet" href="base.css">
+    <style>
+    #content {width: 1000px;margin:auto;}
+    #leftSide, #rightSide {width:198px;height:250px;border:thin solid silver;}
+    #mainContent {background-color:#eee;border:thin solid gray;overflow:hidden;}
+    #firstFloated {width:50px;height:100px;margin:10px;background-color:rgba(0,0,255,0.5);}
+    #mainTitle, #mainDes {background-color:#dad;}
+    #floatedA, #floatedB {width:100px;height:100px;margin:10px;background-color:#ddd;}
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="leftSide" class="f-fl">left side</div>
+        <div id="rightSide" class="f-fr">right side</div>
+        <div id="mainContent">
+            <div class="f-fl" id="firstFloated"></div>
+            <h3 id="mainTitle">Main Content</h3>
+            <div class="f-fr" id="floatedA">floated</div>
+            <div class="f-fr f-cr" id="floatedB">cleared floated</div>
+            <p id="mainDes">Make it establish a Block Formatting Context, for the sake of the children!</p>
+        </div>
+    </div>
+</body>
+</html>
